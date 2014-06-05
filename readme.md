@@ -85,4 +85,5 @@ Use following options to convert into alternate image formats:
 ## License
 
 This is licensed under BSD.
+
 WebP is licensed under [Creative Commons Attribution 3.0 License](http://creativecommons.org/licenses/by/3.0/).
