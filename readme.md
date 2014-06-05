@@ -29,6 +29,14 @@ $ npm install --save dwebp-bin
 
 ## Usage
 
+### Command Line
+
+```sh
+$ dwebp input.webp -o output.png
+```
+
+### From source file
+
 ```js
 var execFile = require('child_process').execFile;
 var dwebp = require('dwebp-bin').path;
