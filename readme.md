@@ -1,4 +1,4 @@
-# node-dwebp-bin
+# [node-dwebp-bin](https://www.npmjs.org/package/dwebp-bin)
 
 [![Build Status](https://travis-ci.org/1000ch/node-dwebp-bin.svg?branch=master)](https://travis-ci.org/1000ch/node-dwebp-bin)
 [![NPM version](https://badge.fury.io/js/dwebp-bin.svg)](http://badge.fury.io/js/dwebp-bin)
