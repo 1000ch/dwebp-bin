@@ -21,22 +21,16 @@ var bin = new BinWrapper()
  */
 fs.exists(bin.use(), function (exists) {
   if (!exists) {
-    var args = [
-      path.join(__dirname, 'test/fixtures/test.webp'),
-      '-o',
-      path.join(__dirname, 'test/fixtures/test.png')
-    ];
-
-    bin.run(args, function (err) {
-      if (err) {
+    bin.run('-version', function (error) {
+      if (error) {
         console.log(chalk.red('✗ pre-build test failed, compiling from source...'));
 
         var builder = new BinBuild()
           .src('https://webp.googlecode.com/files/libwebp-0.4.0.tar.gz')
           .make('./configure && make && mkdir -p ' + bin.dest() + ' && mv ./examples/.libs/dwebp ' + bin.use());
 
-        return builder.build(function (err) {
-          if (err) {
+        return builder.build(function (error) {
+          if (error) {
             return console.log(chalk.red('✗ ' + err));
           }
 

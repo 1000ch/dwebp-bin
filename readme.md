@@ -5,20 +5,12 @@
 [![Dependency Status](https://david-dm.org/1000ch/node-dwebp-bin.svg)](https://david-dm.org/1000ch/node-dwebp-bin)
 [![devDependency Status](https://david-dm.org/1000ch/node-dwebp-bin/dev-status.svg)](https://david-dm.org/1000ch/node-dwebp-bin#info=devDependencies)
 
-## Dependency
+## Dependencies on Linux
 
-WebP requires following libraries. See [detail](https://developers.google.com/speed/webp/docs/compiling).
-
-### Linux
+WebP requires following libraries on Linux. See [detail](https://developers.google.com/speed/webp/docs/compiling#compiling_on_unix-like_platforms).
 
 ```sh
 $ sudo apt-get install libjpeg-dev libpng-dev libtiff-dev libgif-dev
-```
-
-### Mac OS X
-
-```sh
-$ sudo port install jpeg libpng tiff giflib
 ```
 
 ## Install
