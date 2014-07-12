@@ -1,6 +1,6 @@
 {
   "name": "dwebp-bin",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "dwebp node.js wrapper that convert WebP into PNG",
   "bin": {
     "dwebp": "cli.js"
