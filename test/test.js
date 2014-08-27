@@ -21,11 +21,16 @@ describe('dwebp()', function () {
   it('should rebuild the dwebp binaries', function (callback) {
     var tmp = path.join(__dirname, 'tmp');
     var builder = new BinBuild()
-      .src('https://webp.googlecode.com/files/libwebp-0.4.0.tar.gz')
-      .make('./configure && make && mv ./examples/.libs/dwebp ' + path.join(tmp, 'dwebp'));
+      .src('http://downloads.webmproject.org/releases/webp/libwebp-0.4.1.tar.gz')
+      .cmd('node -p "require(\'fs\').chmodSync(\'./configure\', \'755\')"')
+      .cmd('./configure && make && mv ./examples/.libs/dwebp ' + path.join(tmp, 'dwebp'));
 
     builder.build(function (error) {
-      assert(!error);
+      if (error) {
+        callback(error);
+        return;
+      }
+
       assert(fs.existsSync(path.join(tmp, 'dwebp')));
       callback();
     });
