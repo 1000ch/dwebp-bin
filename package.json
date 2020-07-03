@@ -1,17 +1,11 @@
 {
   "name": "dwebp-bin",
   "version": "0.3.0",
-  "description": "dwebp node.js wrapper that convert WebP into PNG",
-  "bin": {
-    "dwebp": "cli.js"
-  },
+  "description": "dwebp wrapper that makes it seamlessly available as a local dependency",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "git://github.com/1000ch/dwebp-bin.git"
-  },
-  "scripts": {
-    "test": "xo && ava --timeout=120s",
-    "postinstall": "node lib/install.js"
   },
   "bugs": {
     "url": "https://github.com/1000ch/dwebp-bin/issues"
@@ -22,21 +16,15 @@
     "email": "shogosensui@gmail.com",
     "url": "https://github.com/1000ch"
   },
+  "bin": {
+    "dwebp": "cli.js"
+  },
   "engines": {
     "node": ">=10"
   },
-  "license": "MIT",
-  "dependencies": {
-    "bin-build": "^3.0.0",
-    "bin-wrapper": "^4.1.0",
-    "logalot": "^2.1.0"
-  },
-  "devDependencies": {
-    "ava": "^3.9.0",
-    "bin-check": "^4.1.0",
-    "is-png": "^2.0.0",
-    "tempy": "^0.5.0",
-    "xo": "^0.32.0"
+  "scripts": {
+    "test": "xo && ava --timeout=120s",
+    "postinstall": "node lib/install.js"
   },
   "files": [
     "lib",
@@ -55,5 +43,17 @@
   ],
   "xo": {
     "space": 2
+  },
+  "dependencies": {
+    "bin-build": "^3.0.0",
+    "bin-wrapper": "^4.1.0",
+    "logalot": "^2.1.0"
+  },
+  "devDependencies": {
+    "ava": "^3.9.0",
+    "bin-check": "^4.1.0",
+    "is-png": "^2.0.0",
+    "tempy": "^0.5.0",
+    "xo": "^0.32.0"
   }
 }
