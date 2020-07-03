@@ -1,9 +1,9 @@
-# [node-dwebp-bin](https://www.npmjs.org/package/dwebp-bin)
+# [dwebp-bin](https://www.npmjs.org/package/dwebp-bin)
 
-[![Build Status](https://travis-ci.org/1000ch/node-dwebp-bin.svg?branch=master)](https://travis-ci.org/1000ch/node-dwebp-bin)
+[![Build Status](https://travis-ci.org/1000ch/dwebp-bin.svg?branch=master)](https://travis-ci.org/1000ch/dwebp-bin)
 [![NPM version](https://badge.fury.io/js/dwebp-bin.svg)](http://badge.fury.io/js/dwebp-bin)
-[![Dependency Status](https://david-dm.org/1000ch/node-dwebp-bin.svg)](https://david-dm.org/1000ch/node-dwebp-bin)
-[![devDependency Status](https://david-dm.org/1000ch/node-dwebp-bin/dev-status.svg)](https://david-dm.org/1000ch/node-dwebp-bin#info=devDependencies)
+[![Dependency Status](https://david-dm.org/1000ch/dwebp-bin.svg)](https://david-dm.org/1000ch/dwebp-bin)
+[![devDependency Status](https://david-dm.org/1000ch/dwebp-bin/dev-status.svg)](https://david-dm.org/1000ch/dwebp-bin#info=devDependencies)
 
 ## Dependencies on Linux
 

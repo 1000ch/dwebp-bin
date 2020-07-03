@@ -7,16 +7,16 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/1000ch/node-dwebp-bin.git"
+    "url": "git://github.com/1000ch/dwebp-bin.git"
   },
   "scripts": {
     "test": "xo && ava --timeout=120s",
     "postinstall": "node lib/install.js"
   },
   "bugs": {
-    "url": "https://github.com/1000ch/node-dwebp-bin/issues"
+    "url": "https://github.com/1000ch/dwebp-bin/issues"
   },
-  "homepage": "https://github.com/1000ch/node-dwebp-bin",
+  "homepage": "https://github.com/1000ch/dwebp-bin",
   "author": {
     "name": "1000ch",
     "email": "shogo.sensui@gmail.com",
