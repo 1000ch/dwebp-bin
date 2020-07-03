@@ -40,6 +40,7 @@
   },
   "files": [
     "lib",
+    "vendor/source",
     "cli.js",
     "index.js"
   ],
