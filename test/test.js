@@ -12,7 +12,7 @@ const dwebp = require('..');
 test('rebuild the dwebp binaries', async t => {
   const temporary = tempy.directory();
 
-  await binBuild.url('http://downloads.webmproject.org/releases/webp/libwebp-0.4.1.tar.gz', [
+  await binBuild.url('http://downloads.webmproject.org/releases/webp/libwebp-1.1.0.tar.gz', [
     `./configure --disable-shared --prefix="${temporary}" --bindir="${temporary}"`,
     'make && make install'
   ]);
