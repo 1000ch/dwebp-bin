@@ -1,4 +1,8 @@
 .DS_Store
 node_modules
 test/tmp
+vendor/include
+vendor/share
+vendor/lib
 vendor/dwebp
+vendor/cwebp
