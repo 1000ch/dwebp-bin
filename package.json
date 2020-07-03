@@ -10,7 +10,7 @@
     "url": "git://github.com/1000ch/node-dwebp-bin.git"
   },
   "scripts": {
-    "test": "mocha --reporter spec --timeout 75000",
+    "test": "xo && ava --timeout=120s",
     "postinstall": "node lib/install.js"
   },
   "bugs": {
@@ -32,9 +32,11 @@
     "logalot": "^2.1.0"
   },
   "devDependencies": {
+    "ava": "^3.9.0",
     "bin-check": "^4.1.0",
-    "mocha": "^7.1.1",
-    "rimraf": "^3.0.2"
+    "is-png": "^2.0.0",
+    "tempy": "^0.5.0",
+    "xo": "^0.32.0"
   },
   "files": [
     "lib",
@@ -49,5 +51,8 @@
     "png",
     "gif",
     "webp"
-  ]
+  ],
+  "xo": {
+    "space": 2
+  }
 }

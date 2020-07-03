@@ -1,62 +1,40 @@
-/*global afterEach, beforeEach, describe, it */
 'use strict';
+const fs = require('fs');
+const path = require('path');
+const test = require('ava');
+const execa = require('execa');
+const tempy = require('tempy');
+const binCheck = require('bin-check');
+const binBuild = require('bin-build');
+const isPNG = require('is-png');
+const dwebp = require('..');
 
-var assert = require('assert').strict;
-var binCheck = require('bin-check');
-var binBuild = require('bin-build');
-var execFile = require('child_process').execFile;
-var fs = require('fs');
-var path = require('path');
-var rm = require('rimraf').sync;
-var promisify = require('util').promisify;
-var execFileAsync = promisify(execFile);
+test('rebuild the dwebp binaries', async t => {
+  const temporary = tempy.directory();
 
-describe('dwebp()', function () {
-  var tmp = path.join(__dirname, 'tmp');
-  var testPng = path.join(tmp, 'test.png');
-  var testWebP = path.join(__dirname, 'fixtures/test.webp');
-  var dwebpBin = path.join(tmp, 'dwebp');
-  var binPath = require('../').path;
-  var args = [
-    testWebP,
+  await binBuild.url('http://downloads.webmproject.org/releases/webp/libwebp-0.4.1.tar.gz', [
+    `./configure --disable-shared --prefix="${temporary}" --bindir="${temporary}"`,
+    'make && make install'
+  ]);
+
+  t.true(fs.existsSync(path.join(temporary, 'dwebp')));
+});
+
+test('return path to binary and verify that it is working', async t => {
+  t.true(await binCheck(dwebp, ['-version']));
+});
+
+test('convert a WebP to PNG', async t => {
+  const temporary = tempy.directory();
+  const src = path.join(__dirname, 'fixtures/test.webp');
+  const dest = path.join(temporary, 'test.png');
+  const args = [
+    src,
     '-o',
-    testPng
+    dest
   ];
 
-  afterEach(function (callback) {
-    rm(tmp);
-    callback();
-  });
+  await execa(dwebp, args);
 
-  beforeEach(function (callback) {
-    fs.mkdirSync(tmp);
-    callback();
-  });
-
-  it('should rebuild the dwebp binaries', function () {
-    return binBuild.url('https://storage.googleapis.com/downloads.webmproject.org/releases/webp/libwebp-1.1.0.tar.gz', [
-      'node -p "require(\'fs\').chmodSync(\'./configure\', \'755\')"',
-      './configure && make && mv ./examples/.libs/dwebp ' + dwebpBin
-    ]).then(function () {
-      assert.strictEqual(fs.existsSync(dwebpBin), true);
-    }).catch(function (error) {
-      assert.fail(error);
-    });
-  });
-
-  it('should return path to binary and verify that it is working', function () {
-    return binCheck(binPath, args).then(function (works) {
-      assert.strictEqual(works, true);
-    }).catch(function (error) {
-      assert.fail(error);
-    });
-  });
-
-  it('should convert WebP into PNG', function () {
-    return execFileAsync(binPath, args).then(function () {
-      assert.strictEqual(typeof fs.statSync(testPng), "object");
-    }).catch(function (error) {
-      assert.fail(error);
-    });
-  });
+  t.true(isPNG(fs.readFileSync(dest)));
 });
