@@ -52,7 +52,7 @@
   "devDependencies": {
     "ava": "^3.9.0",
     "bin-check": "^4.1.0",
-    "is-png": "^2.0.0",
+    "is-png": "^3.0.0",
     "tempy": "^1.0.0",
     "xo": "^0.41.0"
   }
