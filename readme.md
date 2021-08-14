@@ -17,8 +17,8 @@ $ sudo apt-get install libjpeg-dev libpng-dev libtiff-dev libgif-dev
 ## Usage
 
 ```js
-const {execFile} = require('child_process');
-const dwebp = require('dwebp-bin');
+import {execFile} from 'node:child_process';
+import dwebp from 'dwebp-bin';
 
 execFile(dwebp, ['input.webp', '-o', 'output.png'], error => {
   if (error) {
