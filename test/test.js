@@ -18,7 +18,7 @@ test('rebuild the dwebp binaries', async t => {
     'make && make install',
   ]);
 
-  t.true(await fs.exists(path.join(temporary, 'dwebp')));
+  t.truthy(await fs.stat(path.join(temporary, 'dwebp')));
 });
 
 test('return path to binary and verify that it is working', async t => {
