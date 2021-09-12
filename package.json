@@ -47,8 +47,7 @@
   },
   "dependencies": {
     "bin-build": "^3.0.0",
-    "bin-wrapper": "^4.1.0",
-    "logalot": "^2.1.0"
+    "bin-wrapper": "^4.1.0"
   },
   "devDependencies": {
     "ava": "^3.9.0",
