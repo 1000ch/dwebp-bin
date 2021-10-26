@@ -1,4 +1,4 @@
-# dwebp-bin ![GitHub Actions Status](https://github.com/1000ch/dwebp-bin/workflows/test/badge.svg?branch=master)
+# dwebp-bin ![GitHub Actions Status](https://github.com/1000ch/dwebp-bin/workflows/test/badge.svg?branch=main)
 
 > [WebP](https://developers.google.com/speed/webp/) is a modern image format that provides superior lossless and lossy compression for images on the web. Using WebP, webmasters and web developers can create smaller, richer images that make the web faster.
 

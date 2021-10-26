@@ -21,10 +21,10 @@
     "dwebp": "cli.js"
   },
   "engines": {
-    "node": ">=12.20"
+    "node": "^12.20.0 || ^14.13.1 || >=16.0.0"
   },
   "scripts": {
-    "test": "xo && ava --timeout=120s",
+    "test": "xo && ava --timeout=180s",
     "postinstall": "node lib/install.js"
   },
   "files": [
@@ -50,10 +50,10 @@
     "bin-wrapper": "^4.1.0"
   },
   "devDependencies": {
-    "ava": "^3.9.0",
+    "ava": "^3.15.0",
     "bin-check": "^4.1.0",
     "is-png": "^3.0.1",
     "tempy": "^2.0.0",
-    "xo": "^0.44.0"
+    "xo": "^0.45.0"
   }
 }

@@ -1,5 +1,6 @@
 import {promises as fs} from 'node:fs';
 import path from 'node:path';
+import process from 'node:process';
 import {fileURLToPath} from 'node:url';
 import test from 'ava';
 import execa from 'execa';
@@ -10,6 +11,12 @@ import isPNG from 'is-png';
 import dwebp from '../index.js';
 
 test('rebuild the dwebp binaries', async t => {
+  // Skip the test on Windows
+  if (process.platform === 'win32') {
+    t.pass();
+    return;
+  }
+
   const temporary = tempy.directory();
   const src = fileURLToPath(new URL('../vendor/source/libwebp-1.1.0.tar.gz', import.meta.url));
 
