@@ -17,6 +17,7 @@
     "url": "https://github.com/1000ch"
   },
   "type": "module",
+  "exports": "./index.js",
   "bin": {
     "dwebp": "cli.js"
   },
